@@ -43,3 +43,6 @@ error checking.  For example, mytar.sh should report (to stdout) if a
 file or archive cannot be read or written, or if an archive is
 truncated or its contents are obviously corrupted.
 
+You probably want to use the utility programs "cmp" to compare the
+contents of binary (non-text) files, and 
+and "diff" to compare the contents of files containing (only) ascii text.
