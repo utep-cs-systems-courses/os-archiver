@@ -15,26 +15,27 @@ implements tar's "c" (create) and x (extract) functions.
 For example, the following command would "create" a new archive on
 tape /dev/mt0 containing the files foo and goo.
 
-tar c foo goo > /dev/mt0
+`tar c foo goo > /dev/mt0`
 
 And following command will extract the archived files on /dev/mt0 to
 tar's current directory:
 
-tar x < /dev/mt0
+`tar x < /dev/mt0`
 
 Note that, if foo or goo already exist, this extraction will overwrite
-them.
+their contents.
 
 Since tar relies on input and output redirection, it can also be used
 to archive into a named file. For example, the following command will
 save the contents of files foo and goo to a file named foogoo.tar:
 
-tar c foo goo > foogoo.tar.
+`tar c foo goo > foogoo.tar`
 
-And the following command should src/foo and src/goo to dest/foo and dest/goo:
+And the following commands should copy src/foo.txt and src/goo.gif to
+dest/foo and dest/goo:
 
-mkdir d
-(cd src; tar c foo.txt goo.jpg) | (cd dest; tar x )
+`mkdir d`
+`(cd src; tar c foo.txt goo.gif) | (cd dest; tar x )`
 
 Like tar, your mytar.sh should be capable of copying the contents of
 both plain-text and non-text "binary" files and provide some minimal
