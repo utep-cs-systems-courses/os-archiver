@@ -66,7 +66,8 @@ truncated or its contents are obviously corrupted.
 
 Observe that mytar's c (create) mode should not create any new files.
 Much like cat (and my demo cat.sh), it just reads from the files
-provided as parameters and writes their names and contents to stdout.
+provided as parameters and writes their contents (and, for my demo
+version, their filenamess) to stdout.
  
 Unlike cat, which just copies file contents verbatim, mytar in create
 mode should encode and/or delimit those names and contents in a manner
