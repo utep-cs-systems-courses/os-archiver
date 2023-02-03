@@ -87,7 +87,7 @@ option.  You may want to modify it to instead use mytar.sh.
 # Learning Outcomes
 
 - file descriptors: can utilize in programs that read and write
-  from stdin, stdout, stderr. and named files.
+  from stdin, stdout, stderr. and named files using system calls.
 
 - interpreted programs: can construct interpreted programs that are
   invoked directly from the command line.  Includes familiarity with
