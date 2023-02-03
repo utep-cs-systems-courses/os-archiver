@@ -84,7 +84,7 @@ version, their filenamess) to stdout.
 Unlike cat, which just copies file contents verbatim, mytar in create
 mode should encode and/or delimit those names and contents in a manner
 that another instance of mytar running in x (extract) mode can
-reliably distinguish.
+reliably distinguish and extract them.
 
 You have been provided demo codes that open, create, close, read and
 write files and stdion/out using only system calls exposed in python's os
