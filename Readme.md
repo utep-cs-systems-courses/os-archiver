@@ -62,7 +62,7 @@ file or archive cannot be read or written, or if an archive is
 truncated or its contents are obviously corrupted.
 
 
-# A hint
+# Hints and suggestions
 
 Observe that mytar's c (create) mode should not create any new files.
 Much like cat (and my demo cat.sh), it just reads from the files
@@ -80,6 +80,22 @@ module. Thus the project's only significant challenge will be
 determine how to encode and/or delmit strings and bytearrays in an
 archive's stream of bytes.  Once you figure this out, implementation
 should be trivial.
+
+Your protocol may need to know file size before sending.  If so, it
+can use the lseek() or fstat system calls.  They're both part of python's
+os package and documented in docs.python.org.
+ 
+# A cool (and optional) feature 
+
+If you want to do something extra, you might want to enable your
+archiver to recursively archive entire directory hierarchies. 
+
+If you want to implement this feature (seriously, do everything else
+first), your program will need to use scandir() or listdir() to list
+directory contents, and fstat() to determine whether a filename
+actually is the name of a subdirectory.  These system calls are part of
+the python os package.
+
 
 # Testing your archiver
 
