@@ -48,8 +48,8 @@ syscalls, as exposed in python's OS module.
 
 __Don't aspire to be compatible with the standard tar:__
 The standard tar program implements many advanced features that are
-not required for your archiver.  You do not need to implement them,
-and the encoding used by your program will likely be very different
+not required for your archiver.  The encoding used by your program
+will likely be very different 
 (and incompatible) with the encodings used by the "standard" tar.
 
 __Determining file size:__
