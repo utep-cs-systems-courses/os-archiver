@@ -42,27 +42,27 @@ dest/foo and dest/goo:
 
 # Important considerations and restrictions
 
-** System call requirement: **
+__System call requirement:__
 Your program should only perform i/o by explicitly calling posix
 syscalls, as exposed in python's OS module. 
 
-** Don't aspire to be compatible with the standard tar: **
+__Don't aspire to be compatible with the standard tar:__
 The standard tar program implements many advanced features that are
 not required for your archiver.  You do not need to implement them,
 and the encoding used by your program will likely be very different
 (and incompatible) with the encodings used by the "standard" tar.
 
-** Determining file size: **
+__Determining file size:__
 Note that the size of the files being archived may be greater than a
 computer's address space.  Like both Unix's original the FSF herd's
 current implementation of tar, your program should not require such a
 large amount of memory.
 
-** Binary files: **
+__Binary files:__
 Mytar.sh should be capable of copying the contents of
 both plain-text and non-text "binary" files.
 
-** Error reporting: **
+__Error reporting:__
 Mytar.sh should report something useful (to stderr) if things run amuck.
 For example, it should indicate if file or archive cannot be read or
 or an archive's contents are obviously corrupted. 
