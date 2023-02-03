@@ -38,8 +38,7 @@ save the contents of files foo and goo to a file named foogoo.tar:
 And the following commands should copy src/foo.txt and src/goo.gif to
 dest/foo and dest/goo:
 
-`mkdir d`
-`(cd src; tar c foo.txt goo.gif) | (cd dest; tar x )`
+`mkdir d; (cd src; tar c foo.txt goo.gif) | (cd dest; tar x )`
 
 # Important considerations and restrictions
 
