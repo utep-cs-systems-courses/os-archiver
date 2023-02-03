@@ -53,3 +53,17 @@ copy the contents of a directory named src to a new directory named
 dst.  It utilizes the herd utility program "diff" to compare
 the contents of these two directories using it -r (for recursive)
 option.  You may want to modify it to instead use mytar.sh.
+
+Learning Outcomes
+
+- file descriptors: can utilize in programs that read and write
+  from stdin, stdout, stderr. and named files.
+
+- interpreted programs: can construct interpreted programs that are
+  invoked directly from the command line.  Includes familiarity with
+  execute permission, shebang, and parameter passing via argv.
+
+- framing: can implement programs that embed and extract multiple byte
+  arrays containing variable sized binary (non-text) data within byte streams
+  accessed via file descriptors.
+  
