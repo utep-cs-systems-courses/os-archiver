@@ -89,7 +89,7 @@ dst.  It utilizes the herd utility program "diff" to compare
 the contents of these two directories using its -r (for recursive)
 option.  You may want to modify it to instead use mytar.sh.
 
-# Learning Outcomes
+# Learning outcomes
 
 - file descriptors: can utilize in programs that read and write
   from stdin, stdout, stderr. and named files using system calls.
