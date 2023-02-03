@@ -44,7 +44,7 @@ dest/foo and dest/goo:
 
 __System call requirement:__
 Your program should only perform i/o by explicitly calling posix
-syscalls, as exposed in python's OS module. 
+syscalls, as exposed in python's OS package. 
 
 __Don't aspire to be compatible with the standard tar:__
 The standard tar program implements many advanced features that are
@@ -52,7 +52,13 @@ not required for your archiver.  The encoding used by your program
 will likely be very different 
 (and incompatible) with the encodings used by the "standard" tar.
 
-__Determining file size:__
+__File size__:
+Your archive format may need to know file size (in bytes) before
+copying its data.  If so, your program can determine this using either
+lseek() and fstat() system calls. (also in the os package)
+
+
+__Giant files:__
 Note that the size of the files being archived may be greater than a
 computer's address space.  Like both Unix's original the FSF herd's
 current implementation of tar, your program should not require such a
@@ -81,11 +87,15 @@ that another instance of mytar running in x (extract) mode can
 reliably distinguish.
 
 You have been provided demo codes that open, create, close, read and
-write files and stdion/out using only system calls exposed in the os
-module. Thus the project's only significant challenge will be
+write files and stdion/out using only system calls exposed in python's os
+package. Thus the project's only significant challenge will be
 determine how to encode and/or delmit strings and bytearrays in an
 archive's stream of bytes.  Once you figure this out, implementation
 should be trivial.
+
+# Documentation of Python's OS module.
+
+It's all at [https://docs.python.org/3/library/io.html](https://docs.python.org/3/library/io.html).  Google also knows about "python.org os".
 
 # A cool (and optional) feature 
 
