@@ -57,6 +57,25 @@ error checking.  For example, mytar.sh should report (to stdout) if a
 file or archive cannot be read or written, or if an archive is
 truncated or its contents are obviously corrupted.
 
+
+# A hint
+
+Observe that mytar's c (create) mode should not create any new files.
+Much like cat (and my demo cat.sh), it just reads from the files
+provided as parameters and writes their names and contents to stdout.
+ 
+Unlike cat, which just copies file contents verbatim, mytar in create
+mode should encode and/or delimit those names and contents in a manner
+that another instance of mytar running in x (extract) mode can
+reliably distinguish.
+
+You have been provided demo codes that open, create, close, read and
+write files and stdion/out using only system calls exposed in the os
+module. Thus the project's only significant challenge will be
+determine how to encode and/or delmit strings and bytearrays in an
+archive's stream of bytes.  Once you figure this out, implementation
+should be trivial.
+
 # Testing your archiver
 
 You have been provided a bash script "tar-test.sh" that uses tar to
