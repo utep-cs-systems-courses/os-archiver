@@ -68,7 +68,7 @@ For example, it should indicate if file or archive cannot be read or
 or an archive's contents are obviously corrupted. 
 
 
-# Hints and suggestions
+# Keep it simple and exploit demo codes
 
 Observe that mytar's c (create) mode should not create any new files.
 Much like cat (and my demo cat.sh), it just reads from the files
@@ -87,10 +87,6 @@ determine how to encode and/or delmit strings and bytearrays in an
 archive's stream of bytes.  Once you figure this out, implementation
 should be trivial.
 
-Your protocol may need to know file size before sending.  If so, it
-can use the lseek() or fstat system calls.  They're both part of python's
-os package and documented in docs.python.org.
- 
 # A cool (and optional) feature 
 
 If you want to do something extra, you might want to enable your
