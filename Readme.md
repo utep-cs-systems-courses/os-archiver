@@ -45,6 +45,11 @@ dest/foo and dest/goo:
 Your program should only perform i/o by explicitly calling posix
 syscalls, as exposed in python's OS module. 
 
+The standard tar program implements many advanced features that are
+not required for your archiver.  You do not need to implement them,
+and the encoding used by your program will likely be very different
+(and incompatible) with the encodings used by the "standard" tar.
+
 Note that the size of the files being archived may be greater than a
 computer's address space.  Like both Unix's original the FSF herd's
 current implementation of tar, your program should not require such a
