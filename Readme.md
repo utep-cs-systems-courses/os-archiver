@@ -1,3 +1,5 @@
+# Introduction
+
 For this project, you will create a toy archiver, much like the unix
 program tar.
 
@@ -9,8 +11,10 @@ stdin when extracting.  A unix system's first tape drive is generally
 accessible as /dev/mt0 (for Magnetic Tape zero), and therefore input
 and output redirection can be used connect tar to it.
 
+# Project Description.
+
 Your job is to implement a new program named "mytar.py" that
-implements tar's "c" (create) and x (extract) functions.
+implements tar's "c" (create) and x (extract) function.  
 
 For example, the following command would "create" a new archive on
 tape /dev/mt0 containing the files foo and goo.
@@ -37,6 +41,11 @@ dest/foo and dest/goo:
 `mkdir d`
 `(cd src; tar c foo.txt goo.gif) | (cd dest; tar x )`
 
+# Important considerations and restrictions
+
+Your program should only perform i/o by explicitly calling posix
+syscalls, as exposed in python's OS module. 
+
 Note that the size of the files being archived may be greater than a
 computer's address space.  Like both Unix's original the FSF herd's
 current implementation of tar, your program should not require such a
@@ -48,13 +57,15 @@ error checking.  For example, mytar.sh should report (to stdout) if a
 file or archive cannot be read or written, or if an archive is
 truncated or its contents are obviously corrupted.
 
+# Testing your archiver
+
 You have been provided a bash script "tar-test.sh" that uses tar to
 copy the contents of a directory named src to a new directory named
 dst.  It utilizes the herd utility program "diff" to compare
 the contents of these two directories using it -r (for recursive)
 option.  You may want to modify it to instead use mytar.sh.
 
-Learning Outcomes
+# Learning Outcomes
 
 - file descriptors: can utilize in programs that read and write
   from stdin, stdout, stderr. and named files.
