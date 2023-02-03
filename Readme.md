@@ -86,7 +86,7 @@ should be trivial.
 You have been provided a bash script "tar-test.sh" that uses tar to
 copy the contents of a directory named src to a new directory named
 dst.  It utilizes the herd utility program "diff" to compare
-the contents of these two directories using it -r (for recursive)
+the contents of these two directories using its -r (for recursive)
 option.  You may want to modify it to instead use mytar.sh.
 
 # Learning Outcomes
