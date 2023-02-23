@@ -129,4 +129,22 @@ option.  You may want to modify it to instead use mytar.sh.
 - framing: can implement programs that embed and extract multiple byte
   arrays containing variable sized binary (non-text) data within byte streams
   accessed via file descriptors.
-  
+
+  - design framing strategy and format
+  - encoding
+    - api: define interface (functions, params, algorithms) that will be used to encode & write framed message
+      - note that a message content may be larger than available memory
+      - how will implementation deal with
+        - partial write
+	- message contents being provided in chunks (rather than one giant bytearray)
+	- initializing & keeping track of message state (e.g. bytes left to send
+  - decoding
+     - api: define interface (functions,  params, algorithms) that will be used to retrieve a message
+       - note that a message content may be larger than available memory
+       - how will deal with
+         - partial read
+	 - trackng message state (e.g. # unreceived bytes)
+	 - indicating that entire message has been rec'd
+  - testing
+    - how to know if encoder works?
+    - how to know if decoder works?
